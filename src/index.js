@@ -6,14 +6,12 @@ module.exports = function getLoveTrianglesCount(preferences = []) {
   // your implementation
     let count = 0;
     for (let i = 0; i < preferences.length; i++){
-        if(preferences[i] - 1 === i || preferences[i] - 1 < 0) continue;
-        let secondLoverIndex = preferences[i] - 1;
-        if(preferences[secondLoverIndex] === secondLoverIndex+1 || secondLoverIndex < 0) continue;
-        let thirdLoverIndex = preferences[secondLoverIndex] - 1;
-        if(preferences[thirdLoverIndex] === thirdLoverIndex+1 || thirdLoverIndex < 0) continue;
-        let firstLoverIndex = preferences[thirdLoverIndex] - 1;
-        if(i === firstLoverIndex)
-           count++;
+        if (i === preferences[i+2]-1){
+            if (i === preferences[i+1] - 3)
+            {if (i === preferences[i] - 2)
+                count++}
+        }
+
     }
-    return count/3;
+    return count;
 };
